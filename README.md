@@ -26,8 +26,8 @@ When the climber climbs to a height of 10 m, assuming the last flight 2 meters b
 
 If you want to check your own parameters, just enter them here:
 
-    $climber_falls_height = 4;		//h value
-    $rope_length          = 10;		//L value
+    $climberFallsHeight = 4;		//h value
+    $ropeLength          = 10;		//L value
 
 then
 
