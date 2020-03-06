@@ -31,7 +31,7 @@ If you want to check your own parameters, just enter them here:
 
 then
 
-    return getFallFactory($myFall);		//the f value is 0.4
+    return $fallFactory->getResult();		//the f value is 0.4
 
 
 So you can check which belay sections are safer for you.
