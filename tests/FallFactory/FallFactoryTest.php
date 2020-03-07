@@ -7,21 +7,28 @@ use Waldekgraban\ClimberFallFactory\FallFactory\FallFactory;
 
 class FallFactoryTest extends TestCase
 {
-    public function testCanInitializeByConstructor()
+
+    protected $fallFactory;
+
+    protected function setUp(): void
     {
         $climberFallsHeight = 4;
         $ropeHeight = 10;
-        $fallFactory = new FallFactory($climberFallsHeight, $ropeHeight);
+        $this->fallFactory = new FallFactory($climberFallsHeight, $ropeHeight);
+    }
 
-        $this->assertInstanceOf(FallFactory::class, $fallFactory);
+    public function testCanInitializeByConstructor()
+    {
+        $this->assertInstanceOf(FallFactory::class, $this->fallFactory);
     }
 
     public function testFallFactoryIsNumber()
     {
-        $climberFallsHeight = 4;
-        $ropeHeight = 10;
-        $fallFactory = new FallFactory($climberFallsHeight, $ropeHeight);
+        $this->assertIsFloat($this->fallFactory->getResult());
+    }
 
-        $this->assertIsFloat($fallFactory->getResult());
+    protected function tearDown(): void
+    {
+        unset($this->fallFactory);
     }
 }
