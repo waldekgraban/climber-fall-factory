@@ -7,19 +7,27 @@ use Waldekgraban\ClimberFallFactory\Downfall\Downfall;
 
 class DownfallTest extends TestCase
 {
-    public function testCanInitializeByConstructor()
+
+    protected $downfall;
+
+    protected function setUp(): void
     {
         $climberFallsHeight = 4;
-        $downfall = new Downfall($climberFallsHeight);
+        $this->downfall = new Downfall($climberFallsHeight);
+    }
 
-        $this->assertInstanceOf(Downfall::class, $downfall);
+    public function testCanInitializeByConstructor()
+    {
+        $this->assertInstanceOf(Downfall::class, $this->downfall);
     }
 
     public function testDownfallsHeightIsNumbers()
     {
-        $climberFallsHeight = 4;
-        $downfallHeight = new Downfall($climberFallsHeight);
+        $this->assertIsInt($this->downfall->getFallsHeight());
+    }
 
-        $this->assertIsInt($downfallHeight->getFallsHeight());
+    public function tearDown(): void
+    {
+        unset($this->downfall);
     }
 }
