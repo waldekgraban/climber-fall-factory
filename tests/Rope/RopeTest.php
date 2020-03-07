@@ -2,18 +2,16 @@
 
 namespace Waldekgraban\ClimberFallFactory\Tests\Unit;
 
-use Waldekgraban\ClimberFallFactory\Tests\TestCase;
 use Waldekgraban\ClimberFallFactory\Rope\Rope;
+use Waldekgraban\ClimberFallFactory\Tests\TestCase;
 
 class RopeTest extends TestCase
 {
-
     protected $rope;
 
     protected function setUp(): void
     {
-
-        $length = 4;
+        $length     = 4;
         $this->rope = new Rope($length);
     }
 
@@ -27,8 +25,8 @@ class RopeTest extends TestCase
         $this->assertIsInt($this->rope->getRopeLength());
     }
 
-    protected function tearDown():void
+    protected function tearDown(): void
     {
         unset($this->rope);
-    } 
+    }
 }

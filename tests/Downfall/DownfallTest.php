@@ -2,18 +2,17 @@
 
 namespace Waldekgraban\ClimberFallFactory\Tests\Unit;
 
-use Waldekgraban\ClimberFallFactory\Tests\TestCase;
 use Waldekgraban\ClimberFallFactory\Downfall\Downfall;
+use Waldekgraban\ClimberFallFactory\Tests\TestCase;
 
 class DownfallTest extends TestCase
 {
-
     protected $downfall;
 
     protected function setUp(): void
     {
         $climberFallsHeight = 4;
-        $this->downfall = new Downfall($climberFallsHeight);
+        $this->downfall     = new Downfall($climberFallsHeight);
     }
 
     public function testCanInitializeByConstructor()
