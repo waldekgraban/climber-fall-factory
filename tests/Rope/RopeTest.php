@@ -7,19 +7,28 @@ use Waldekgraban\ClimberFallFactory\Rope\Rope;
 
 class RopeTest extends TestCase
 {
+
+    protected $rope;
+
+    protected function setUp(): void
+    {
+
+        $length = 4;
+        $this->rope = new Rope($length);
+    }
+
     public function testCanInitializeByConstructor()
     {
-        $length = 4;
-        $rope = new Rope($length);
-
-        $this->assertInstanceOf(Rope::class, $rope);
+        $this->assertInstanceOf(Rope::class, $this->rope);
     }
 
     public function testRopesLengthIsNumber()
     {
-        $length = 4;
-        $rope = new Rope($length);
-
-        $this->assertIsInt($rope->getRopeLength());
+        $this->assertIsInt($this->rope->getRopeLength());
     }
+
+    protected function tearDown():void
+    {
+        unset($this->rope);
+    } 
 }
